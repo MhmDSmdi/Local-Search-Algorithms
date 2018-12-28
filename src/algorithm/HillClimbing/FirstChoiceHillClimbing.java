@@ -4,7 +4,7 @@ package algorithm.HillClimbing;
 import graph.State;
 import problem.Problem;
 
-public class FirstChoiceHC extends HillClimbing {
+public class FirstChoiceHillClimbing extends HillClimbing {
     private static final int MAX_RANDOM_TIME = 10;
     @Override
     protected State getNextState(State s, Problem p) {

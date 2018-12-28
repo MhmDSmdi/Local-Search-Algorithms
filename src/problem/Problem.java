@@ -4,10 +4,10 @@ import graph.State;
 
 public abstract class Problem{
 
-    private State initialState;
+    protected State initialState;
 
-    public Problem(State initialState){
-        this.initialState = initialState;
+    public State getInitialState() {
+        return initialState;
     }
 
     public abstract double objectiveFunction(State s);

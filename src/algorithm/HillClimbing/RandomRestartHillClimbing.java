@@ -4,9 +4,8 @@ package algorithm.HillClimbing;
 import graph.State;
 import problem.Problem;
 
-public class RandomRestartHC extends HillClimbing{
+public class RandomRestartHillClimbing extends HillClimbing{
     private static final int MAX_RANDOM_TIME = 10;
-
     private int randomNumber;
 
     @Override

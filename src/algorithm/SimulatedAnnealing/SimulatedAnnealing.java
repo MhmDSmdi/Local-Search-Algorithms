@@ -6,11 +6,11 @@ import problem.Problem;
 
 public class SimulatedAnnealing extends LocalSearch {
     private CoolingScheduler coolingScheduler;
+    private static final int MAX_TRY_NUMS = 25;
+
     public SimulatedAnnealing(CoolingScheduler coolingScheduler){
         this.coolingScheduler = coolingScheduler;
     }
-
-    private static final int MAX_TRY_NUMS = 25;
 
     @Override
     protected State search(Problem p) {
@@ -35,7 +35,6 @@ public class SimulatedAnnealing extends LocalSearch {
                 break;
             }
         }
-
         return s;
     }
 }

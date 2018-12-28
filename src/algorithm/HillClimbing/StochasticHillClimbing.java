@@ -5,7 +5,7 @@ import problem.Problem;
 
 import java.util.ArrayList;
 
-public class StochasticHC extends HillClimbing {
+public class StochasticHillClimbing extends HillClimbing {
     @Override
     protected State getNextState(State s, Problem p) {
         double currentObjective = p.objectiveFunction(s);

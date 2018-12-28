@@ -147,20 +147,20 @@ public class GeneticAlgorithm {
         }
     }
 
-//    public void drawDiagram(){
-//        double xData [] = new double[bestFitness.size()];
-//        for(int i = 0; i < xData.length; i++)
-//            xData[i] = i+1;
-//        double[] bestFitnessArray = new double[xData.length],
-//                worstFitnessArray = new double[xData.length],
-//                averageFitnessArray = new double[xData.length];
-//        for(int i = 0; i < xData.length; i++){
-//            bestFitnessArray[i] = bestFitness.get(i);
-//            worstFitnessArray[i] = worstFitness.get(i);
-//            averageFitnessArray[i] = averageFitness.get(i);
-//        }
+    public void drawDiagram(){
+        double xData [] = new double[bestFitness.size()];
+        for(int i = 0; i < xData.length; i++)
+            xData[i] = i+1;
+        double[] bestFitnessArray = new double[xData.length],
+                worstFitnessArray = new double[xData.length],
+                averageFitnessArray = new double[xData.length];
+        for(int i = 0; i < xData.length; i++){
+            bestFitnessArray[i] = bestFitness.get(i);
+            worstFitnessArray[i] = worstFitness.get(i);
+            averageFitnessArray[i] = averageFitness.get(i);
+        }
 //        new SwingWrapper(QuickChart.getChart("Best Fitness", "n", "fitness", "best fitness", xData, bestFitnessArray)).displayChart();
 //        new SwingWrapper(QuickChart.getChart("Worst Fitness", "n", "fitness", "worst fitness", xData, worstFitnessArray)).displayChart();
 //        new SwingWrapper(QuickChart.getChart("Average Fitness", "n", "fitness", "average fitness", xData, averageFitnessArray)).displayChart();
-//    }
+    }
 }

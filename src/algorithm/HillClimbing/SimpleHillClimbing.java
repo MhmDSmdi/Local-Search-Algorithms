@@ -3,7 +3,7 @@ package algorithm.HillClimbing;
 import graph.State;
 import problem.Problem;
 
-public class SimpleHC extends HillClimbing{
+public class SimpleHillClimbing extends HillClimbing{
     @Override
     protected State getNextState(State s, Problem p){
         double currentObjective = p.objectiveFunction(s);
