@@ -1,6 +1,7 @@
 package algorithm;
 
 import graph.State;
+import problem.GraphColoring;
 import problem.Problem;
 
 public abstract class LocalSearch {
@@ -24,7 +25,7 @@ public abstract class LocalSearch {
         System.out.println("Visited State Size : " + visitedStatesNumber);
         System.out.println("Expanded State Size : " + expandedStatesNumber);
         System.out.println("Best State is : [" + bestState + "]");
-
+        System.out.println("Score = " + bestState.score);
     }
 
 }

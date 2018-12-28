@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import static graph.Node.Color.BLUE;
@@ -12,15 +13,21 @@ public class Node {
     private ArrayList<Node> neighbors;
     private Color color;
 
-    public Node(int id, ArrayList<Node> neighbors, Color color) {
+    public Node(int id, Color color) {
+        neighbors = new ArrayList<>();
         this.id = id;
         this.neighbors = neighbors;
         this.color = color;
     }
 
-    public Node(int id, ArrayList<Node> neighbors) {
+    public Node(int id) {
+        neighbors = new ArrayList<>();
         this.id = id;
-        this.neighbors = neighbors;
+        color = BLUE;
+    }
+
+    public void addNeighbor(Node ... nodes) {
+        neighbors.addAll(Arrays.asList(nodes));
     }
 
     public int getId() {
