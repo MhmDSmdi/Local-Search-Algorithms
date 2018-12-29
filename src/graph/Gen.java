@@ -1,7 +1,6 @@
 package graph;
 
-public abstract class Gen {
-    public abstract String toString();
+public abstract class Gen  {
 
     public abstract Gen clone();
 

@@ -125,22 +125,22 @@ public class GeneticAlgorithm {
     }
 
     private Chromosome crossover(Chromosome c1, Chromosome c2) {
-        int length = c1.gens.length;
-        Gen[] newGens = new Gen[length];
+        int length = c1.getGens().size();
+        ArrayList<Gen> newGens = new ArrayList<>(length);
         int crossoverPos = (int) (Math.random() * (length - 1)) + 1;
         for (int i = 0; i < length; i++) {
-            if (i < crossoverPos) newGens[i] = c1.gens[i];
-            else newGens[i] = c2.gens[i];
+            if (i < crossoverPos) newGens.add(c1.getGens().get(i));
+            else newGens.add(c2.getGens().get(i));
         }
         return new Chromosome(newGens).clone();
     }
 
     private void mutation(Chromosome[] chromosomes) {
-        int totalGen = chromosomes.length * chromosomes[0].gens.length;
+        int totalGen = chromosomes.length * chromosomes[0].getGens().size();
         int mutationNum = (int) (totalGen * mutationRate);
         for (int i = 0; i < mutationNum; i++) {
             int randGenPos = (int) (Math.random() * totalGen);
-            chromosomes[randGenPos % chromosomes.length].gens[randGenPos / chromosomes.length].mutation();
+            chromosomes[randGenPos % chromosomes.length].getGens().get(randGenPos / chromosomes.length).mutation();
         }
     }
 

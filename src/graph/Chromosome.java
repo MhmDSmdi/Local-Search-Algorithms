@@ -1,27 +1,29 @@
 package graph;
 
-public class Chromosome {
-    public Gen[] gens;
+import java.util.ArrayList;
 
-    public Chromosome(Gen[] gens){
+public class Chromosome {
+
+    private ArrayList<Gen> gens;
+
+    public Chromosome(ArrayList<Gen> gens){
         this.gens = gens;
     }
 
     public Chromosome clone(){
-        Gen[] newGens = new Gen[gens.length];
-        for(int i = 0; i < gens.length; i++)
-            newGens[i] = gens[i].clone();
-
+        ArrayList<Gen> newGens = new ArrayList<>();
+        for (Gen gen : gens) newGens.add(gen.clone());
         return new Chromosome(newGens);
     }
 
     public String toString(){
-        String s = "[";
-        for(int i = 0; i < gens.length-1; i++)
-            s = s + gens[i].toString() + ", ";
-
-        s = s + gens[gens.length-1].toString();
-        s = s + "]";
+        String s = "";
+        for(Gen g : gens)
+            s = s + g.toString() + ", ";
         return s;
+    }
+
+    public ArrayList<Gen> getGens() {
+        return gens;
     }
 }

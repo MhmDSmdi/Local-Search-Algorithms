@@ -2,6 +2,7 @@ package problem;
 
 import graph.Chromosome;
 import graph.Gen;
+import graph.Node;
 
 public class GraphColoringGenetic extends GeneticProblem {
 
@@ -21,21 +22,27 @@ public class GraphColoringGenetic extends GeneticProblem {
     }
 
 
-    class ColoringGen extends Gen {
+    public class ColoringGen extends Gen {
+        public Node node;
 
-        @Override
-        public String toString() {
-            return null;
+        public ColoringGen(Node node) {
+            this.node = node;
         }
 
         @Override
         public Gen clone() {
-            return null;
+            Node newNode = new Node(node.getId());
+            ColoringGen clone = new ColoringGen(newNode);
+            for (int i = 0; i < node.getNeighbors().size(); i++) {
+                clone.node.getNeighbors().add(new Node(node.getNeighbors().get(i).getId(), node.getNeighbors().get(i).getColor()));
+            }
+            return clone;
         }
 
         @Override
         public Gen mutation() {
-            return null;
+            node.setColor(node.getColorExcept(node.getColor()));
+            return this;
         }
     }
 }
