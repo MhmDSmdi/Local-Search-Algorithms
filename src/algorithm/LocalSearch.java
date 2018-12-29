@@ -1,7 +1,6 @@
 package algorithm;
 
 import graph.State;
-import problem.GraphColoring;
 import problem.Problem;
 
 public abstract class LocalSearch {

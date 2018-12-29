@@ -2,6 +2,8 @@ package algorithm;
 
 import graph.Chromosome;
 import graph.Gen;
+import org.knowm.xchart.QuickChart;
+import org.knowm.xchart.SwingWrapper;
 import problem.GeneticProblem;
 
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ public class GeneticAlgorithm {
 
     private int maxGenerateNumber, populationNumber;
     private double crossoverRate, mutationRate;
-
+    private Chromosome best;
     private ArrayList<Double> bestFitness, worstFitness, averageFitness;
 
     public GeneticAlgorithm(int maxGenerateNumber, int populationNumber, double crossoverRate, double mutationRate) {
@@ -23,7 +25,6 @@ public class GeneticAlgorithm {
         averageFitness = new ArrayList<>();
     }
 
-    private Chromosome best;
     public void run(GeneticProblem p) {
         bestFitness.clear();
         worstFitness.clear();
@@ -62,9 +63,6 @@ public class GeneticAlgorithm {
         bestFitness.add(maxFitness);
         worstFitness.add(minFitness);
         averageFitness.add(totalFitness/chromosomes.length);
-//        System.out.println("best fitness: " + bestFitness);
-//        System.out.println("worst fitness: " + worstFitness);
-//        System.out.println("average fitness: " + averageFitness);
         return bestChrom;
     }
 
@@ -108,7 +106,6 @@ public class GeneticAlgorithm {
                 }
             }
         }
-
         return newChromosomes;
     }
 
@@ -159,8 +156,8 @@ public class GeneticAlgorithm {
             worstFitnessArray[i] = worstFitness.get(i);
             averageFitnessArray[i] = averageFitness.get(i);
         }
-//        new SwingWrapper(QuickChart.getChart("Best Fitness", "n", "fitness", "best fitness", xData, bestFitnessArray)).displayChart();
-//        new SwingWrapper(QuickChart.getChart("Worst Fitness", "n", "fitness", "worst fitness", xData, worstFitnessArray)).displayChart();
-//        new SwingWrapper(QuickChart.getChart("Average Fitness", "n", "fitness", "average fitness", xData, averageFitnessArray)).displayChart();
+        new SwingWrapper(QuickChart.getChart("Best Fitness", "n", "fitness", "best fitness", xData, bestFitnessArray)).displayChart();
+        new SwingWrapper(QuickChart.getChart("Worst Fitness", "n", "fitness", "worst fitness", xData, worstFitnessArray)).displayChart();
+        new SwingWrapper(QuickChart.getChart("Average Fitness", "n", "fitness", "average fitness", xData, averageFitnessArray)).displayChart();
     }
 }

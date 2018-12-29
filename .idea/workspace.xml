@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36129262-a2e1-4d4f-be86-337986405775" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/xchart_3_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problem/GraphColoringGenetic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI-Fall2018-P2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AI-Fall2018-P2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/algorithm/HillClimbing/HillClimbing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/algorithm/HillClimbing/HillClimbing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/algorithm/HillClimbing/RandomRestartHillClimbing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/algorithm/HillClimbing/RandomRestartHillClimbing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/algorithm/HillClimbing/SimpleHillClimbing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/algorithm/HillClimbing/SimpleHillClimbing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/graph/Node$Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/graph/Node$Color.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/graph/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/graph/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/problem/GraphColoring$GraphState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI-Fall2018-P2/problem/GraphColoring.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm/HillClimbing/HillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/HillClimbing/HillClimbing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm/HillClimbing/RandomRestartHillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/HillClimbing/RandomRestartHillClimbing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm/HillClimbing/SimpleHillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/HillClimbing/SimpleHillClimbing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithm/GeneticAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/GeneticAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/LocalSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/LocalSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graph/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/problem/GraphColoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problem/GraphColoring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/problem/GraphColoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/problem/GraphColoringLocalSearch.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,23 +33,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="88" />
+          <entry key="java" value="96" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="88" />
+          <entry key="JAVA" value="96" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4704" />
+          <entry key="dummy" value="16" />
+          <entry key="java" value="4776" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4704" />
+          <entry key="JAVA" value="4776" />
+          <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
     </session>
@@ -64,65 +59,61 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/HillClimbing/StochasticHillClimbing.java">
+        <entry file="file://$PROJECT_DIR$/src/graph/Gen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/problem/GraphColoring.java">
+        <entry file="file://$PROJECT_DIR$/src/problem/GraphColoringGenetic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="152" column="2" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+            <state relative-caret-position="468">
+              <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#175#176#0" expanded="true" />
+                <element signature="e#215#216#0" expanded="true" />
                 <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#2195#2196#0" expanded="true" />
-                <element signature="e#2222#2223#0" expanded="true" />
-                <element signature="method#createState#0;class#GraphColoring#0" />
-                <element signature="e#4776#4777#0" expanded="true" />
-                <element signature="e#4812#4813#0" expanded="true" />
+                <element signature="e#306#307#0" expanded="true" />
+                <element signature="e#375#376#0" expanded="true" />
+                <element signature="e#399#400#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#687#688#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algorithm/LocalSearch.java">
+        <entry file="file://$PROJECT_DIR$/src/graph/Chromosome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graph/Node.java">
+        <entry file="file://$PROJECT_DIR$/src/problem/GeneticProblem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="198">
+              <caret line="11" column="34" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/algorithm/GeneticAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+            <state relative-caret-position="481">
+              <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,8 +126,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -153,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/problem/GeneticProblem.java" />
         <option value="$PROJECT_DIR$/src/graph/Gen.java" />
         <option value="$PROJECT_DIR$/src/graph/Chromosome.java" />
-        <option value="$PROJECT_DIR$/src/algorithm/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/algorithm/SimulatedAnnealing/SimulatedAnnealing.java" />
         <option value="$PROJECT_DIR$/src/problem/Problem.java" />
         <option value="$PROJECT_DIR$/src/graph/Color.java" />
@@ -163,10 +153,12 @@
         <option value="$PROJECT_DIR$/src/graph/State.java" />
         <option value="$PROJECT_DIR$/src/algorithm/HillClimbing/FirstChoiceHillClimbing.java" />
         <option value="$PROJECT_DIR$/src/algorithm/HillClimbing/HillClimbing.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/algorithm/LocalSearch.java" />
         <option value="$PROJECT_DIR$/src/graph/Node.java" />
         <option value="$PROJECT_DIR$/src/problem/GraphColoring.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/algorithm/GeneticAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/problem/GraphColoringGenetic.java" />
       </list>
     </option>
   </component>
@@ -210,26 +202,6 @@
               <item name="AI-Fall2018-P2" type="b2602c69:ProjectViewProjectNode" />
               <item name="AI-Fall2018-P2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="HillClimbing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AI-Fall2018-P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AI-Fall2018-P2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="SimulatedAnnealing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AI-Fall2018-P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AI-Fall2018-P2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="graph" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AI-Fall2018-P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AI-Fall2018-P2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="problem" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -242,12 +214,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546073830656" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546076240026" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/xchart-3.5.2/xchart-3.5.2/xchart-3.5.2.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -294,17 +267,18 @@
       <updated>1546006233229</updated>
       <workItem from="1546006243830" duration="6400000" />
       <workItem from="1546018228975" duration="11994000" />
-      <workItem from="1546063581858" duration="10304000" />
+      <workItem from="1546063581858" duration="12392000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28698000" />
+    <option name="totallyTimeSpent" value="30786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17929563" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17929563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -313,7 +287,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.51567566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.51567566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,49 +347,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/AI-Fall2018-P2.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graph/Gen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="35" lean-forward="true" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graph/Chromosome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/GeneticAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2826">
-          <caret line="159" column="59" lean-forward="true" selection-start-line="159" selection-start-column="59" selection-end-line="159" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithm/SimulatedAnnealing/SimulatedAnnealing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problem/GeneticProblem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm/SimulatedAnnealing/CoolingScheduler.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -506,16 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithm/HillClimbing/StochasticHillClimbing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -526,19 +447,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/problem/GraphColoring.java">
+    <entry file="file://$PROJECT_DIR$/src/algorithm/SimulatedAnnealing/SimulatedAnnealing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="152" column="2" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/problem/GraphColoringLocalSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="130" column="20" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#282#283#0" expanded="true" />
             <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#2195#2196#0" expanded="true" />
-            <element signature="e#2222#2223#0" expanded="true" />
             <element signature="method#createState#0;class#GraphColoring#0" />
-            <element signature="e#4776#4777#0" expanded="true" />
-            <element signature="e#4812#4813#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithm/GeneticAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/problem/GeneticProblem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graph/Chromosome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graph/Gen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/problem/GraphColoringGenetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#175#176#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -608,6 +598,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>xchart-3.5.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

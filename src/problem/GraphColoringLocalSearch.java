@@ -4,15 +4,13 @@ import graph.Node;
 import graph.State;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Random;
 
-public class GraphColoring extends Problem {
+public class GraphColoringLocalSearch extends Problem {
 
     private static final int edges = 20;
 
-    public GraphColoring() {
+    public GraphColoringLocalSearch() {
         initialState = new GraphState(createState());
     }
 
@@ -105,34 +103,17 @@ public class GraphColoring extends Problem {
             ArrayList<State> neighbors = new ArrayList<>();
             for (int i = 0; i < nodes.size(); i++) {
                 for (Node.Color color : Node.Color.values()) {
-//                    Node[] nodesArray = new Node[nodes.size()];
-//                    System.arraycopy(this.nodes.toArray(),0, nodesArray, 0, nodesArray.length);
                     ArrayList<Node> newNodes = new ArrayList<>();
-                    newNodes = GraphColoring.createState(nodes);
+                    newNodes = GraphColoringLocalSearch.createState(nodes);
                     Node node = newNodes.get(i);
                     if (!node.getColor().equals(color)) {
                         node.setColor(color);
-//                        Collections.addAll(newNodes, nodesArray);
                         GraphState g = new GraphState(newNodes);
-//                        System.out.println(g);
                         neighbors.add(g);
                     }
                 }
             }
-//            System.out.println(neighbors.get(5));
             return neighbors;
-
-//            Node[] nodesArray = new Node[nodes.size()];
-//            ArrayList<State> neighbors = new ArrayList<State>();
-//            System.arraycopy(this.nodes.toArray(),0, nodesArray, 0, nodesArray.length);
-//            for (Node n : nodesArray)
-//                System.out.println(n);
-//            nodesArray[0].setColor(Node.Color.R);
-//            System.out.println("COLOR CHANGED!!!!!");
-//            for (Node n : nodesArray)
-//                System.out.println(n);
-//
-//            return neighbors;
         }
 
         @Override
@@ -165,18 +146,5 @@ public class GraphColoring extends Problem {
             return super.clone();
         }
 
-
-
-//        private ArrayList<Node> cloneNodes(ArrayList<Node> nodes) {
-//            ArrayList<Node> clone = new ArrayList<>(nodes.size());
-//            for (Node n : nodes) {
-//                try {
-//                    clone.add((Node) n.clone());
-//                } catch (CloneNotSupportedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//            return clone;
-//        }
     }
 }
