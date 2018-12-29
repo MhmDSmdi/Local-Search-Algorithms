@@ -18,6 +18,7 @@ public abstract class HillClimbing extends LocalSearch {
                 break;
             }
         }
+        p.objectiveFunction(s);
         return s;
     }
 

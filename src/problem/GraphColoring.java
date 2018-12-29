@@ -4,6 +4,8 @@ import graph.Node;
 import graph.State;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class GraphColoring extends Problem {
@@ -11,6 +13,36 @@ public class GraphColoring extends Problem {
     private static final int edges = 20;
 
     public GraphColoring() {
+        initialState = new GraphState(createState());
+    }
+
+    @Override
+    public double objectiveFunction(State s) {
+        float difference = 0;
+        int same = 0;
+        for (Node node : ((GraphState)s).getNodes()) {
+            for (Node n : node.getNeighbors()) {
+                if (!n.getColor().equals(node.getColor())) {
+                    difference++;
+//                    System.out.println(difference);
+                } else {
+                    same++;
+                }
+            }
+        }
+
+        float result = difference / (2 * edges) * 100;
+        System.out.println(s + "#Has result = " + result + "  SameColor = " + same/2 + " DefferenceColor = " + difference / 2);
+        s.score = result;
+        return result;
+    }
+
+    @Override
+    public State getRandomState() {
+        return null;
+    }
+
+    public static ArrayList<Node> createState() {
         ArrayList<Node> nodeArrayList = new ArrayList<>();
         Node s1 = new Node(1);
         nodeArrayList.add(s1);
@@ -46,32 +78,22 @@ public class GraphColoring extends Problem {
         s9.addNeighbor(s5, s10, s11);
         s10.addNeighbor(s7, s9, s1, s6);
         s11.addNeighbor(s8, s9, s1, s4);
-
-        initialState = new GraphState(nodeArrayList);
-
+        return nodeArrayList;
     }
 
-    @Override
-    public double objectiveFunction(State s) {
-        float difference = 0;
-        for (Node node : ((GraphState)s).getNodes())
-            for (Node n : node.getNeighbors())
-                if (!n.getColor().equals(node.getColor()))
-                    difference ++;
-
-        float result = difference / (2 * edges) * 100;
-        System.out.println("For " + s + " has result = " + result);
-        s.score = result;
-        return result;
-    }
-
-    @Override
-    public State getRandomState() {
-        return null;
+    public static ArrayList<Node> createState(ArrayList<Node> list) {
+        ArrayList<Node> nodes = createState();
+        for (int i =0 ; i < list.size() ; i++) {
+            nodes.get(i).setColor(list.get(i).getColor());
+            for (int j = 0; j < list.get(i).getNeighbors().size(); j++) {
+                nodes.get(i).getNeighbors().get(j).setColor(list.get(i).getNeighbors().get(j).getColor());
+            }
+        }
+        return nodes;
     }
 
 
-    class GraphState extends State {
+    class GraphState extends State implements Cloneable {
 
         private ArrayList<Node> nodes;
         public GraphState(ArrayList<Node> nodes) {
@@ -81,15 +103,36 @@ public class GraphColoring extends Problem {
         @Override
         public ArrayList<State> getNeighbors() {
             ArrayList<State> neighbors = new ArrayList<>();
-            ArrayList<Node> newNodes = (ArrayList<Node>) nodes.clone();
-            for (Node node : newNodes) {
+            for (int i = 0; i < nodes.size(); i++) {
                 for (Node.Color color : Node.Color.values()) {
+//                    Node[] nodesArray = new Node[nodes.size()];
+//                    System.arraycopy(this.nodes.toArray(),0, nodesArray, 0, nodesArray.length);
+                    ArrayList<Node> newNodes = new ArrayList<>();
+                    newNodes = GraphColoring.createState(nodes);
+                    Node node = newNodes.get(i);
                     if (!node.getColor().equals(color)) {
-                        neighbors.add(new GraphState(newNodes));
+                        node.setColor(color);
+//                        Collections.addAll(newNodes, nodesArray);
+                        GraphState g = new GraphState(newNodes);
+//                        System.out.println(g);
+                        neighbors.add(g);
                     }
                 }
             }
+//            System.out.println(neighbors.get(5));
             return neighbors;
+
+//            Node[] nodesArray = new Node[nodes.size()];
+//            ArrayList<State> neighbors = new ArrayList<State>();
+//            System.arraycopy(this.nodes.toArray(),0, nodesArray, 0, nodesArray.length);
+//            for (Node n : nodesArray)
+//                System.out.println(n);
+//            nodesArray[0].setColor(Node.Color.R);
+//            System.out.println("COLOR CHANGED!!!!!");
+//            for (Node n : nodesArray)
+//                System.out.println(n);
+//
+//            return neighbors;
         }
 
         @Override
@@ -104,8 +147,12 @@ public class GraphColoring extends Problem {
         public String toString() {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append("\n");
-            for (Node node : nodes)
-                stringBuilder.append("Node{" + node.getId() + "} , Color = " + node.getColor() + "\n");
+//            stringBuilder.append("[");
+            for (Node node : nodes) {
+               stringBuilder.append(node);
+//               stringBuilder.append(node.getColor());
+            }
+//            stringBuilder.append("]");
             return stringBuilder.toString();
         }
 
@@ -113,5 +160,23 @@ public class GraphColoring extends Problem {
             return nodes;
         }
 
+        @Override
+        protected Object clone() throws CloneNotSupportedException {
+            return super.clone();
+        }
+
+
+
+//        private ArrayList<Node> cloneNodes(ArrayList<Node> nodes) {
+//            ArrayList<Node> clone = new ArrayList<>(nodes.size());
+//            for (Node n : nodes) {
+//                try {
+//                    clone.add((Node) n.clone());
+//                } catch (CloneNotSupportedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            return clone;
+//        }
     }
 }

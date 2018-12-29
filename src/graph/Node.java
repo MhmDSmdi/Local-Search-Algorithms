@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import static graph.Node.Color.BLUE;
-import static graph.Node.Color.GREEN;
-import static graph.Node.Color.RED;
+import static graph.Node.Color.B;
+import static graph.Node.Color.G;
+import static graph.Node.Color.R;
 
-public class Node {
+public class Node implements Cloneable {
     private int id;
     private ArrayList<Node> neighbors;
     private Color color;
@@ -23,7 +23,7 @@ public class Node {
     public Node(int id) {
         neighbors = new ArrayList<>();
         this.id = id;
-        color = BLUE;
+        color = B;
     }
 
     public void addNeighbor(Node ... nodes) {
@@ -57,19 +57,33 @@ public class Node {
             nTag = rnd.nextInt(3);
         switch (nTag) {
             case 0:
-                return RED;
+                return R;
             case 1:
-                return GREEN;
+                return G;
             case 2:
-                return BLUE;
+                return B;
         }
-        return BLUE;
+        return B;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Node{" + this.getId() + "} , Color = " + this.getColor() + "\n");
+        for (Node n : this.getNeighbors())
+            stringBuilder.append("\tNode{" + n.getId() + "} , Color = " + n.getColor() + "\n");
+        return stringBuilder.toString();
     }
 
     public enum Color {
-        RED(0),
-        GREEN(1),
-        BLUE(2);
+        R(0),
+        G(1),
+        B(2);
 
         private int tag;
 

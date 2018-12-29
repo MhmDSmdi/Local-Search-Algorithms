@@ -1,13 +1,13 @@
-import algorithm.HillClimbing.FirstChoiceHillClimbing;
+import algorithm.HillClimbing.StochasticHillClimbing;
 import algorithm.LocalSearch;
-import graph.Node;
 import problem.GraphColoring;
-import problem.Problem;
 
-public class Main {
+public class Main implements Cloneable {
+
     public static void main(String[] args) {
         GraphColoring graphColoring = new GraphColoring();
-        LocalSearch localSearch = new FirstChoiceHillClimbing();
+        LocalSearch localSearch = new StochasticHillClimbing();
         localSearch.run(graphColoring);
+
     }
 }

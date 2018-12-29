@@ -18,7 +18,7 @@ public class RandomRestartHillClimbing extends HillClimbing{
     protected State getNextState(State s, Problem p) {
         double currentObjective = p.objectiveFunction(s);
         State nextState = null;
-        double nextMaxObjective = -1.0 / 0.0;
+        double nextMaxObjective = -1.0;
         for(State neiState : s.getNeighbors()){
             double neiStateObjective = p.objectiveFunction(neiState);
             if(neiStateObjective > nextMaxObjective){

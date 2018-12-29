@@ -12,7 +12,7 @@ public abstract class LocalSearch {
         visitedStatesNumber = 0;
         expandedStatesNumber = 0;
         bestState = search(p);
-        printResult();
+//        printResult();
     }
 
     protected abstract State search(Problem p);
