@@ -13,7 +13,7 @@ public class Main implements Cloneable {
 //        localSearch.run(graphColoringLocalSearch);
 
         GraphColoringGenetic graphColoringGenetic = new GraphColoringGenetic();
-        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(10, 20, 0.2, 0.3);
+        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(50, 40, 0.02, 0.05);
         geneticAlgorithm.run(graphColoringGenetic);
         geneticAlgorithm.drawDiagram();
 

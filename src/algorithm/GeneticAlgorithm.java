@@ -43,19 +43,18 @@ public class GeneticAlgorithm {
         System.out.println(p.objectiveFunction(best));
     }
 
-    private Chromosome getBest( ArrayList<Chromosome> chromosomes, GeneticProblem p) {
+    private Chromosome getBest(ArrayList<Chromosome> chromosomes, GeneticProblem p) {
         double maxFitness = 0;
         double minFitness = Double.MAX_VALUE;
         double totalFitness = 0;
         Chromosome bestChrom = null;
-        for(int i = 0; i < chromosomes.size(); i++){
-            Chromosome chrom = chromosomes.get(i);
+        for (Chromosome chrom : chromosomes) {
             double fitness = p.fitness(p.objectiveFunction(chrom));
-            if(fitness > maxFitness){
+            if (fitness > maxFitness) {
                 maxFitness = fitness;
                 bestChrom = chrom;
             }
-            if(fitness < minFitness){
+            if (fitness < minFitness) {
                 minFitness = fitness;
             }
             totalFitness += fitness;
@@ -70,25 +69,26 @@ public class GeneticAlgorithm {
         return best;
     }
 
-    private void generation( ArrayList<Chromosome> chromosomes, GeneticProblem p) {
+    private void generation(ArrayList<Chromosome> chromosomes, GeneticProblem p) {
         chromosomes = selection(chromosomes, p);
         crossover(chromosomes);
         mutation(chromosomes);
     }
 
     private  ArrayList<Chromosome> selection(ArrayList<Chromosome> chromosomes, GeneticProblem p) {
-        double fitness[] = new double[chromosomes.size()];
         double totalFitness = 0;
+        double fitness[] = new double[chromosomes.size()];
+        double probabilities[] = new double[fitness.length];
+        double cumulativeProbabilities[] = new double[probabilities.length];
         for (int i = 0; i < fitness.length; i++) {
             fitness[i] = p.fitness(p.objectiveFunction(chromosomes.get(i)));
             totalFitness += fitness[i];
         }
-        double probabilities[] = new double[fitness.length];
+
         for (int i = 0; i < fitness.length; i++) {
             probabilities[i] = fitness[i] / totalFitness;
         }
 
-        double cumulativeProbabilities[] = new double[probabilities.length];
         cumulativeProbabilities[0] = probabilities[0];
         for (int i = 1; i < probabilities.length - 1; i++) {
             cumulativeProbabilities[i] = cumulativeProbabilities[i - 1] + probabilities[i];
@@ -129,8 +129,10 @@ public class GeneticAlgorithm {
         ArrayList<Gen> newGens = new ArrayList<>(length);
         int crossoverPos = (int) (Math.random() * (length - 1)) + 1;
         for (int i = 0; i < length; i++) {
-            if (i < crossoverPos) newGens.add(c1.getGens().get(i));
-            else newGens.add(c2.getGens().get(i));
+            if (i < crossoverPos)
+                newGens.add(c1.getGens().get(i));
+            else
+                newGens.add(c2.getGens().get(i));
         }
         return new Chromosome(newGens).clone();
     }

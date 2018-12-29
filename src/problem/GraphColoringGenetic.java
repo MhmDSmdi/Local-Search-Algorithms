@@ -22,7 +22,7 @@ public class GraphColoringGenetic extends GeneticProblem {
     @Override
     public double objectiveFunction(Chromosome c) {
         float difference = 0;
-        int same = 0;
+        float same = 0;
 
         for (Gen gen : c.getGens()) {
             Node node = ((ColoringGen)gen).node;
@@ -34,14 +34,14 @@ public class GraphColoringGenetic extends GeneticProblem {
                 }
             }
         }
-        float result = difference / (2 * edges) * 100;
-        System.out.println(c + "\n#Has result = " + result + "  SameColor = " + same/2 + " DefferenceColor = " + difference / 2);
+        float result = difference / (2 * edges);
+//        System.out.println(c + "\n#Has result = " + result + "  SameColor = " + same/2 + " DefferenceColor = " + difference / 2);
         return result;
     }
 
     @Override
     public double fitness(double objectiveFunction) {
-        return 1.0 / (1 + objectiveFunction);
+        return objectiveFunction;
     }
 
     private ArrayList<Gen> getRandomChromosomes() {
