@@ -3,9 +3,11 @@ package problem;
 
 import graph.Chromosome;
 
+import java.util.ArrayList;
+
 public abstract class GeneticProblem {
 
-    public abstract Chromosome[] getInitialChromosomes(int number);
+    public abstract ArrayList<Chromosome> getInitialChromosomes(int number);
 
     public abstract double objectiveFunction(Chromosome c);
 

@@ -30,7 +30,7 @@ public class GeneticAlgorithm {
         worstFitness.clear();
         averageFitness.clear();
 
-        Chromosome[] chromosomes = p.getInitialChromosomes(populationNumber);
+        ArrayList<Chromosome> chromosomes = p.getInitialChromosomes(populationNumber);
         int i;
         for (i = 0; i < maxGenerateNumber; i++) {
             generation(chromosomes, p);
@@ -43,13 +43,13 @@ public class GeneticAlgorithm {
         System.out.println(p.objectiveFunction(best));
     }
 
-    private Chromosome getBest(Chromosome[] chromosomes, GeneticProblem p) {
+    private Chromosome getBest( ArrayList<Chromosome> chromosomes, GeneticProblem p) {
         double maxFitness = 0;
         double minFitness = Double.MAX_VALUE;
         double totalFitness = 0;
         Chromosome bestChrom = null;
-        for(int i = 0; i < chromosomes.length; i++){
-            Chromosome chrom = chromosomes[i];
+        for(int i = 0; i < chromosomes.size(); i++){
+            Chromosome chrom = chromosomes.get(i);
             double fitness = p.fitness(p.objectiveFunction(chrom));
             if(fitness > maxFitness){
                 maxFitness = fitness;
@@ -62,7 +62,7 @@ public class GeneticAlgorithm {
         }
         bestFitness.add(maxFitness);
         worstFitness.add(minFitness);
-        averageFitness.add(totalFitness/chromosomes.length);
+        averageFitness.add(totalFitness/chromosomes.size());
         return bestChrom;
     }
 
@@ -70,17 +70,17 @@ public class GeneticAlgorithm {
         return best;
     }
 
-    private void generation(Chromosome[] chromosomes, GeneticProblem p) {
+    private void generation( ArrayList<Chromosome> chromosomes, GeneticProblem p) {
         chromosomes = selection(chromosomes, p);
         crossover(chromosomes);
         mutation(chromosomes);
     }
 
-    private Chromosome[] selection(Chromosome[] chromosomes, GeneticProblem p) {
-        double fitness[] = new double[chromosomes.length];
+    private  ArrayList<Chromosome> selection(ArrayList<Chromosome> chromosomes, GeneticProblem p) {
+        double fitness[] = new double[chromosomes.size()];
         double totalFitness = 0;
         for (int i = 0; i < fitness.length; i++) {
-            fitness[i] = p.fitness(p.objectiveFunction(chromosomes[i]));
+            fitness[i] = p.fitness(p.objectiveFunction(chromosomes.get(i)));
             totalFitness += fitness[i];
         }
         double probabilities[] = new double[fitness.length];
@@ -95,13 +95,13 @@ public class GeneticAlgorithm {
         }
         cumulativeProbabilities[cumulativeProbabilities.length - 1] = 1.0;
 
-        Chromosome newChromosomes[] = new Chromosome[chromosomes.length];
+        ArrayList<Chromosome> newChromosomes = new ArrayList<>(chromosomes.size());
 
-        for (int i = 0; i < chromosomes.length; i++) {
+        for (int i = 0; i < chromosomes.size(); i++) {
             double rand = Math.random();
             for (int j = 0; j < cumulativeProbabilities.length; j++) {
                 if (rand < cumulativeProbabilities[j]) {
-                    newChromosomes[i] = chromosomes[j];
+                    newChromosomes.add(i, chromosomes.get(j));
                     break;
                 }
             }
@@ -109,18 +109,18 @@ public class GeneticAlgorithm {
         return newChromosomes;
     }
 
-    private void crossover(Chromosome[] chromosomes) {
+    private void crossover(ArrayList<Chromosome> chromosomes) {
         ArrayList<Chromosome> parents = new ArrayList<>();
         ArrayList<Integer> parentsIndexes = new ArrayList<>();
-        for (int i = 0; i < chromosomes.length; i++) {
+        for (int i = 0; i < chromosomes.size(); i++) {
             if (Math.random() < crossoverRate) {
-                parents.add(chromosomes[i]);
+                parents.add(chromosomes.get(i));
                 parentsIndexes.add(i);
             }
         }
 
         for (int i = 0; i < parents.size(); i++) {
-            chromosomes[parentsIndexes.get(i)] = crossover(parents.get(i), parents.get((i + 1) % parents.size()));
+            chromosomes.add(parentsIndexes.get(i), crossover(parents.get(i), parents.get((i + 1) % parents.size())));
         }
     }
 
@@ -135,12 +135,12 @@ public class GeneticAlgorithm {
         return new Chromosome(newGens).clone();
     }
 
-    private void mutation(Chromosome[] chromosomes) {
-        int totalGen = chromosomes.length * chromosomes[0].getGens().size();
+    private void mutation(ArrayList<Chromosome> chromosomes) {
+        int totalGen = chromosomes.size() * chromosomes.get(0).getGens().size();
         int mutationNum = (int) (totalGen * mutationRate);
         for (int i = 0; i < mutationNum; i++) {
             int randGenPos = (int) (Math.random() * totalGen);
-            chromosomes[randGenPos % chromosomes.length].getGens().get(randGenPos / chromosomes.length).mutation();
+            chromosomes.get(randGenPos % chromosomes.size()).getGens().get(randGenPos / chromosomes.size()).mutation();
         }
     }
 

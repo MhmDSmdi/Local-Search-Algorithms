@@ -17,10 +17,12 @@ public class Chromosome {
     }
 
     public String toString(){
-        String s = "";
-        for(Gen g : gens)
-            s = s + g.toString() + ", ";
-        return s;
+        StringBuilder stringBuilder = new StringBuilder();
+        for(Gen g : gens) {
+            stringBuilder.append(g);
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
     }
 
     public ArrayList<Gen> getGens() {

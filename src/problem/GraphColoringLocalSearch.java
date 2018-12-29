@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class GraphColoringLocalSearch extends Problem {
 
-    private static final int edges = 20;
+    public static final int edges = 20;
 
     public GraphColoringLocalSearch() {
         initialState = new GraphState(createState());
