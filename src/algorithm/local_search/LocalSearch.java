@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.local_search;
 
 import graph.State;
 import problem.Problem;
@@ -7,11 +7,11 @@ public abstract class LocalSearch {
     public int visitedStatesNumber, expandedStatesNumber;
     private State bestState;
 
-    public void run(Problem p){
+    public void startLocalSearch(Problem p){
         visitedStatesNumber = 0;
         expandedStatesNumber = 0;
         bestState = search(p);
-//        printResult();
+        printResult();
     }
 
     protected abstract State search(Problem p);

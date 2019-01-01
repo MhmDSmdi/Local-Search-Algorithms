@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.genetic;
 
 import graph.Chromosome;
 import graph.Gen;

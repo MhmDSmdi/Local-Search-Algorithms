@@ -1,21 +1,19 @@
-import algorithm.GeneticAlgorithm;
-import algorithm.LocalSearch;
-import algorithm.SimulatedAnnealing.CoolingScheduler;
-import algorithm.SimulatedAnnealing.SimulatedAnnealing;
-import problem.GraphColoringGenetic;
+import algorithm.local_search.LocalSearch;
+import algorithm.local_search.HillClimbing.SimulatedAnnealing;
 import problem.GraphColoringLocalSearch;
 
 public class Main implements Cloneable {
 
     public static void main(String[] args) {
-//        GraphColoringLocalSearch graphColoringLocalSearch = new GraphColoringLocalSearch();
-//        LocalSearch localSearch = new SimulatedAnnealeing(CoolingScheduler.reversi);
-//        localSearch.run(graphColoringLocalSearch);
+        GraphColoringLocalSearch graphColoringLocalSearch = new GraphColoringLocalSearch();
+        LocalSearch localSearch = new SimulatedAnnealing();
+        localSearch.startLocalSearch(graphColoringLocalSearch);
 
-        GraphColoringGenetic graphColoringGenetic = new GraphColoringGenetic();
-        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(50, 40, 0.02, 0.05);
-        geneticAlgorithm.run(graphColoringGenetic);
-        geneticAlgorithm.drawDiagram();
+//        GraphColoringGenetic graphColoringGenetic = new GraphColoringGenetic();
+//        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(50, 1000, 0.4, 0.2);
+//        geneticAlgorithm.run(graphColoringGenetic);
+//        geneticAlgorithm.drawDiagram();
+//        System.out.println(geneticAlgorithm.getBest());
 
     }
 }

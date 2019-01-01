@@ -30,7 +30,7 @@ public class GraphColoringLocalSearch extends Problem {
         }
 
         float result = difference / (2 * edges) * 100;
-        System.out.println(s + "#Has result = " + result + "  SameColor = " + same/2 + " DefferenceColor = " + difference / 2);
+//        System.out.println(s + "#Has result = " + result + "  SameColor = " + same/2 + " DefferenceColor = " + difference / 2);
         s.score = result;
         return result;
     }
@@ -128,12 +128,12 @@ public class GraphColoringLocalSearch extends Problem {
         public String toString() {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append("\n");
-//            stringBuilder.append("[");
+            stringBuilder.append("[");
             for (Node node : nodes) {
-               stringBuilder.append(node);
-//               stringBuilder.append(node.getColor());
+//               stringBuilder.append(node);
+               stringBuilder.append(" " + node.getColor() + " ");
             }
-//            stringBuilder.append("]");
+            stringBuilder.append("]");
             return stringBuilder.toString();
         }
 

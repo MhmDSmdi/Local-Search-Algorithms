@@ -1,11 +1,11 @@
-package algorithm.HillClimbing;
+package algorithm.local_search.HillClimbing;
 
 import graph.State;
 import problem.Problem;
 
 import java.util.ArrayList;
 
-public class StochasticHillClimbing extends HillClimbing {
+public class StochasticHillClimbing extends BasicHillClimbing {
     @Override
     protected State getNextState(State s, Problem p) {
         double currentObjective = p.objectiveFunction(s);

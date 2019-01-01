@@ -1,16 +1,11 @@
-package algorithm.SimulatedAnnealing;
+package algorithm.local_search.HillClimbing;
 
-import algorithm.LocalSearch;
+import algorithm.local_search.LocalSearch;
 import graph.State;
 import problem.Problem;
 
 public class SimulatedAnnealing extends LocalSearch {
-    private CoolingScheduler coolingScheduler;
     private static final int MAX_TRY_NUMS = 25;
-
-    public SimulatedAnnealing(CoolingScheduler coolingScheduler){
-        this.coolingScheduler = coolingScheduler;
-    }
 
     @Override
     protected State search(Problem p) {
@@ -22,7 +17,7 @@ public class SimulatedAnnealing extends LocalSearch {
             State randomNeighbor = s.getRandomNeighbor();
             visitedStatesNumber++;
             if(p.objectiveFunction(randomNeighbor) > p.objectiveFunction(s)
-                    || Math.random() < coolingScheduler.possibility(n+tryNum)) {
+                    || Math.random() < coolingFunction(n + tryNum)) {
                 s = randomNeighbor;
                 expandedStatesNumber++;
                 n++;
@@ -37,4 +32,9 @@ public class SimulatedAnnealing extends LocalSearch {
         }
         return s;
     }
+
+    private double coolingFunction(int n) {
+        return Math.exp(-n);
+    }
+    
 }

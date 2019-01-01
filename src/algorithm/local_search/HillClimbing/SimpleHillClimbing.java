@@ -1,9 +1,9 @@
-package algorithm.HillClimbing;
+package algorithm.local_search.HillClimbing;
 
 import graph.State;
 import problem.Problem;
 
-public class SimpleHillClimbing extends HillClimbing{
+public class SimpleHillClimbing extends BasicHillClimbing {
     @Override
     protected State getNextState(State s, Problem p){
         double currentObjective = p.objectiveFunction(s);

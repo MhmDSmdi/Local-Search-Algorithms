@@ -1,17 +1,17 @@
-package algorithm.HillClimbing;
+package algorithm.local_search.HillClimbing;
 
 
 import graph.State;
 import problem.Problem;
 
-public class RandomRestartHillClimbing extends HillClimbing{
+public class RandomRestartHillClimbing extends BasicHillClimbing {
     private static final int MAX_RANDOM_TIME = 10;
     private int randomNumber;
 
     @Override
-    protected State search(Problem p) {
+    protected State search(Problem problem) {
         randomNumber = 0;
-        return super.search(p);
+        return super.search(problem);
     }
 
     @Override

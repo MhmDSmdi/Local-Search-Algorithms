@@ -1,10 +1,10 @@
-package algorithm.HillClimbing;
+package algorithm.local_search.HillClimbing;
 
 
 import graph.State;
 import problem.Problem;
 
-public class FirstChoiceHillClimbing extends HillClimbing {
+public class FirstChoiceHillClimbing extends BasicHillClimbing {
     private static final int MAX_RANDOM_TIME = 10;
     @Override
     protected State getNextState(State s, Problem p) {
